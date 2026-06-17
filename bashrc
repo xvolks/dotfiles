@@ -202,13 +202,16 @@ PROMPT_DIRTRIM=6
 # custom prompt for YSAP
 if [[ $ITERM_PROFILE == 'YSAP'* ]]; then
 	# username (red for root)
-	PS1='\[${PROMPT_COLORS[0]}\]dave\[${COLOR256[256]}\]'
+	PS1='\[${PROMPT_COLORS[0]}\]'
+	PS1+=$USER
+	PS1+='\[${COLOR256[256]}\]'
 
 	# @
 	PS1+='\[${PROMPT_COLORS[1]}\]\[${COLOR256[257]}\]@\[${COLOR256[256]}\]'
 
 	# hostname
-	PS1+='\[${PROMPT_COLORS[3]}\]ysap '
+	PS1+='\[${PROMPT_COLORS[3]}\]'
+	PS1+=$(hostname)
 
 	# cwd
 	#PS1+='\[${PROMPT_COLORS[5]}\]\w '
